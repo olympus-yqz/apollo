@@ -22,10 +22,16 @@ public class WelcomeController {
 
     @GetMapping
     public String hi() {
+        String str = "";
+        try {
+            str = rest.getForObject("http://ORDER-SERVICE/goods", String.class);
+            System.out.println(str);
+            return "hi, yqzhang";
+        } catch (Exception ex) {
 
-        String str = rest.getForObject("http://ORDER-SERVICE/goods", String.class);
-        System.out.println(str);
-        return "hi, yqzhang";
+        }
+
+        return str;
     }
 
 }

@@ -28,6 +28,7 @@ public class GoodsController {
         list.add(new GoodsEntity("100002", "卡迪拉克", BigDecimal.valueOf(300000)));
         list.add(new GoodsEntity("100003", "格拉苏蒂", BigDecimal.valueOf(40000)));
 
+        System.out.println(System.currentTimeMillis());
 
         return list;
     }
