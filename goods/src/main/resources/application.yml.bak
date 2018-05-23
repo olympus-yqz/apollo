@@ -1,0 +1,9 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: goods-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://zeus:8761/eureka/,http://hades:8761/eureka/,http://apollo:8761/eureka/

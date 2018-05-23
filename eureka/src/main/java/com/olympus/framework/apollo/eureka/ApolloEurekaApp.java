@@ -1,4 +1,4 @@
-package com.framework.olympus.apollo.eureka;
+package com.olympus.framework.apollo.eureka;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

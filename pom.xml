@@ -19,6 +19,7 @@
         <module>eureka</module>
         <module>order</module>
         <module>web</module>
+        <module>goods</module>
     </modules>
 
     <dependencyManagement>
