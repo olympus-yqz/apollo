@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: eureka-server
+---
+spring:
+  profiles: zeus
+security:
+  basic:
+    enabled: true
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: zeus
+#    发送心跳时间间隔
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
+  client:
+    service-url:
+      defaultZone: http://apollo:8761/eureka,http://hades:8761/eureka
+#日志级别
+#logging:
+#  level:
+#    com.netflix: DEBUG
+---
+spring:
+  profiles: apollo
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: apollo
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    service-url:
+      defaultZone: http://zeus:8761/eureka,http://hades:8761/eureka
+---
+spring:
+  profiles: hades
+security:
+  basic:
+    enabled: true
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: hades
+    leaseRenewalIntervalInSeconds: 5
+  client:
+    service-url:
+      defaultZone: http://zeus:8761/eureka,http://apollo:8761/eureka
